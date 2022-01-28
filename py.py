@@ -31,7 +31,7 @@ def commentdate(): #最新コメントの日付を取得
 
 driver = driver_init()
 driver.get('https://iab-bp.omron.co.jp/drppe/')
-time.sleep(10)
+time.sleep(1)
 
 dt = datetime.date.today()# 本日の日付を取得
 print(dt)
