@@ -19,7 +19,7 @@ jobs:
           sudo apt-get install google-chrome-stable
       - name: Install Package
         run: |
-          pip install chromedriver-binary==94.*
+          pip install chromedriver-binary==89.0.4389.23
 
       - name: Get Python version
         run: python -V
