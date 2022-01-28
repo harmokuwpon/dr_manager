@@ -41,20 +41,6 @@ ws=wb.active
 
 
 
-address= driver.find_element_by_id('i0116')
-address_string="ayato.kuwabara@omron.com"
-address.send_keys(address_string)
-driver.find_element_by_id('idSIButton9').click()
-
-
-#lightbox > div:nth-child(3) > div > div > div > div.row > div.form-group.col-md-24 > div
-time.sleep(7)
-
-password= driver.find_element_by_id('passwordInput')
-password_string="Dendoko521122"
-password.send_keys(password_string)
-driver.find_element_by_id('submitButton').click()
-driver.find_element_by_id('idSIButton9').click()
 time.sleep(4)
 
 org_window = driver.current_window_handle
