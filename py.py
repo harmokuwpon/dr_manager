@@ -1,3 +1,14 @@
+import time
+import openpyxl
+import datetime
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+
+
+
 from get_chrome_driver import GetChromeDriver
 from selenium import webdriver
 
@@ -20,21 +31,16 @@ def commentdate(): #最新コメントの日付を取得
 
 driver = driver_init()
 driver.get('https://iab-bp.omron.co.jp/drppe/')
-
+time.sleep(10)
 
 dt = datetime.date.today()# 本日の日付を取得
 print(dt)
 
 wb = openpyxl.Workbook()
 ws=wb.active
-options = EdgeOptions()
-options.use_chromium = True
-path = r"C:\py\msedgedriver.exe"
-options.add_argument("headless")        #ヘッドレス
-#options.add_argument("disable-gpu")
-driver = Edge(executable_path=path, options=options)
-driver.get('https://iab-bp.omron.co.jp/drppe/')
-time.sleep(10)
+
+
+
 address= driver.find_element_by_id('i0116')
 address_string="ayato.kuwabara@omron.com"
 address.send_keys(address_string)
