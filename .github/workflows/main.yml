@@ -17,4 +17,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run Python
+<<<<<<< Updated upstream
         run: python py.py
+=======
+        run: python py.py
+>>>>>>> Stashed changes
