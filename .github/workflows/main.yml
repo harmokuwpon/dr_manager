@@ -4,7 +4,7 @@ on: push
 jobs:
   build:
     name: Greeting
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Setup Python
@@ -12,10 +12,23 @@ jobs:
         with:
           python-version: '3.9.6'
           architecture: 'x64'
+      - name: Install Chrome
+        run: |
+          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo apt update
+          sudo apt-get install google-chrome-stable
+      - name: Install Package
+        run: |
+          pip install chromedriver-binary==89.0.4389.23
+
       - name: Get Python version
         run: python -V
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        
+        run: |
+            pip install get-chrome-driver --upgrade 
+            pip install -r requirements.txt
+        
       - name: Run Python
 
         run: python py.py

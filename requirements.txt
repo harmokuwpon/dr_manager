@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 numpy >= 1.22.1
 openpyxl >= 3.0.8
 selenium >= 3.141.0
+=======
+selenium >= 3.141.0
+openpyxl >= 3.0.8
+>>>>>>> e83e51c4041e18e7b9935fbfdcc5fe9f216d3df1
